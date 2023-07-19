@@ -15,7 +15,7 @@
  *
  @{
   \package Geant4EventReaderMUCARLO
- * \brief Reader for text files with muons created from MUCARLO.
+ * \brief Reader for ascii files with muons created from MUCAR:P.
  *
  *
 @}
@@ -40,7 +40,7 @@ namespace dd4hep {
     /**
      *  Reader for text files with muons created from MUCARLO.
      *  Will read complete the file into one event - unless skip N events is
-     *  called, then N particles are compiled into one event. Modified from GuineaPig reader.
+     *  called, then N particles are compiled into one event.
      * 
      *  \author  H. Jia, Stanford
      *  \version 1.0
@@ -238,14 +238,14 @@ Geant4EventReaderMUCARLO::readParticles(int /* event_number */,
     p->pez = p->psz = TMath::Sqrt(Momentum*Momentum-Momentum*XPRIME*Momentum*XPRIME-Momentum*YPRIME*Momentum*YPRIME)*CLHEP::GeV;
 
     //  Mass
-    p->mass = 0.56583755*CLHEP::GeV;
+    p->mass = 0.1056583755*CLHEP::GeV;
     //
 
 
     //  Creation time (note the units [1/c_light])
     // ( not information in GuineaPig files )
-    p->time       = Delta_t;
-    p->properTime = Delta_t*TMath::Sqrt(1-Momentum*Momentum/(0.56583755*0.56583755));
+    p->time       = 0.0;
+    p->properTime = 0.0;
 
 
     //  Vertex
