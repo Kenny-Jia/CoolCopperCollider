@@ -15,7 +15,7 @@
  *
  @{
   \package Geant4EventReaderMUCARLO
- * \brief Reader for ascii files with muons created from MUCAR:P.
+ * \brief Reader for text files with muons created from MUCARLO.
  *
  *
 @}
@@ -40,7 +40,7 @@ namespace dd4hep {
     /**
      *  Reader for text files with muons created from MUCARLO.
      *  Will read complete the file into one event - unless skip N events is
-     *  called, then N particles are compiled into one event.
+     *  called, then N particles are compiled into one event. Modified from GuineaPig reader.
      * 
      *  \author  H. Jia, Stanford
      *  \version 1.0
