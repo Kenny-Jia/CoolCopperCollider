@@ -233,9 +233,9 @@ Geant4EventReaderMUCARLO::readParticles(int /* event_number */,
     }
 
     //  Momentum vector
-    p->pex = p->psx = Momentum*XPRIME*CLHEP::GeV;
-    p->pey = p->psy = Momentum*YPRIME*CLHEP::GeV;
-    p->pez = p->psz = TMath::Sqrt(Momentum*Momentum-Momentum*XPRIME*Momentum*XPRIME-Momentum*YPRIME*Momentum*YPRIME)*CLHEP::GeV;
+    p->pex = p->psx = Momentum*XPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME)*CLHEP::GeV;
+    p->pey = p->psy = Momentum*YPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME)*CLHEP::GeV;
+    p->pez = p->psz = TMath::Sqrt(Momentum*Momentum-Momentum*XPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME)*Momentum*XPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME)-Momentum*YPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME)*Momentum*YPRIME*TMath::Sqrt(1+XPRIME*XPRIME+YPRIME*YPRIME))*CLHEP::GeV;
 
     //  Mass
     p->mass = 0.1056583755*CLHEP::GeV;
