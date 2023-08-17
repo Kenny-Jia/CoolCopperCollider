@@ -251,7 +251,7 @@ Geant4EventReaderMUCARLO::readParticles(int /* event_number */,
     //  Vertex
     p->vsx = X*CLHEP::cm;
     p->vsy = Y*CLHEP::cm;
-    p->vsz = 10*CLHEP::m;
+    p->vsz = -10*CLHEP::m;
 
     Vertex* vtx = new Vertex ;
     vtx->x = p->vsx ;
