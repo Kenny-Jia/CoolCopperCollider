@@ -7,7 +7,7 @@
 // For the licensing terms see $DD4hepINSTALL/LICENSE.
 // For the list of contributors see $DD4hepINSTALL/doc/CREDITS.
 //
-// Author     : M.Frank
+// Author     : H.Jia
 //
 //==========================================================================
 
@@ -15,8 +15,8 @@
  *
  @{
   \package Geant4EventReaderMUCARLO
- * \brief Reader for ascii files with muons created from MUCAR:P.
- *
+ * \brief Reader for ascii files with muons created from MUCARLO. This script is modified from M.Frank's Geant4EventReaderGuineaPig.cpp
+ * 
  *
 @}
  */
