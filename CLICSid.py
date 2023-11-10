@@ -33,7 +33,8 @@ class CLICSid:
       #install_dir = #os.environ['DD4hepINSTALL']
       level = DDG4.printLevel()
       DDG4.setPrintLevel(DDG4.OutputLevel.WARNING)
-      self.kernel.loadGeometry(str("/eos/user/h/hjia/C3/dd4hep/lcgeo/SiD/compact/SiD_o2_v04/SiD_o2_v04.xml"))
+      self.kernel.loadGeometry(str("/gpfs/slac/atlas/fs1/u/hjia625/C3/dd4hep/lcgeo/SiD/compact/sidloi3/sidloi3_v00.xml"))
+      #self.kernel.loadGeometry(str("/gpfs/slac/atlas/fs1/u/hjia625/C3/dd4hep/lcgeo/SiD/compact/SiD_o2_v04/SiD_o2_v04.xml"))
       DDG4.setPrintLevel(level)
     else:
       ui = DDG4.DD4hepUI(self.description)
@@ -65,7 +66,9 @@ class CLICSid:
     # Add leptons to the model (redundant if already implemented by the model)
     ph.addParticleGroup(str('G4LeptonConstructor'))
     # Add multiple scattering in the material
-    ph.addParticleProcess(str('mu[+-]'), str('G4hMultipleScattering'), -1, 1, 1)
+    ph.addParticleProcess(str('mu[+-]'), str('G4MuMultipleScattering'), -1, 1, 1)
+    ph.addParticleProcess(str('mu[+-]'), str('G4MuIonisation'), -1, 2, 2)
+    ph.addParticleProcess(str('mu[+-]'), str('G4MuBremsstrahlung'), -1, 3, 3)
     # Add optical physics (RICH dets etc)
     ph.addPhysicsConstructor(str('G4OpticalPhysics'))
     # Interactivity
