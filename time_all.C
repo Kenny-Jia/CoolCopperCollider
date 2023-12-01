@@ -17,7 +17,6 @@ void singlebkg(TTree *tree, const char *hitname, TH1D* histo) {
     tree->ResetBranchAddresses();
     int hitcnt = 0;
     
-    using Truth = std::variant<dd4hep::sim::Geant4HitData::MonteCarloContrib, std::vector<dd4hep::sim::Geant4HitData::MonteCarloContrib>>;
     vector<dd4hep::sim::Geant4Calorimeter::Hit*> *hits = new vector<dd4hep::sim::Geant4Calorimeter::Hit*>; 
 
     tree -> SetBranchAddress(hitname, &hits);
@@ -232,7 +231,7 @@ void time_all() {
     HCalEndcapHitsHisto -> SetStats(0);
     MuonBarrelHitsHisto -> SetStats(0);  
     MuonEndcapHitsHisto -> SetStats(0); 
-    LumiCalHitsHisto -> SetStats(0);  
+    LumiCalHitsHisto -> SetStats(0); 
     BeamCalHitsHisto -> SetStats(0);
     SiVertexBarrelHitsHisto -> SetStats(0);
     SiVertexEndcapHitsHisto -> SetStats(0);
